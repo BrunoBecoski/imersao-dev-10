@@ -1,0 +1,48 @@
+[
+  {
+    "name": "JavaScript",
+    "year": 1995,
+    "description": "JavaScript é uma linguagem da web.",
+    "link": "https://developer.mozilla.org/pt-BR/docs/Web/JavaScript"
+  },{
+    "name": "Python",
+    "year": 1991,
+    "description": "Python é uma linguagem da ciência de dados e IA.",
+    "link": "https://docs.python.org/pt-br/3.14"
+  },{
+    "name": "Java",
+    "year": 1995,
+    "description": "Java é uma linguagem de programação orientada a objetos, popular para aplicações corporativas.",
+    "link": "https://docs.oracle.com/en/java/"
+  },{
+    "name": "C#",
+    "year": 2000,
+    "description": "C# (C Sharp) é uma linguagem moderna, orientada a objetos e desenvolvida pela Microsoft.",
+    "link": "https://learn.microsoft.com/pt-br/dotnet/csharp/"
+  },{
+    "name": "C++",
+    "year": 1985,
+    "description": "C++ é uma linguagem de programação de propósito geral com recursos de programação de baixo e alto nível.",
+    "link": "https://isocpp.org/get-started"
+  },{
+    "name": "PHP",
+    "year": 1995,
+    "description": "PHP é uma linguagem de script popular, especialmente adequada para o desenvolvimento web",
+    "link": "https://www.php.net/manual/pt_BR/"
+  },{
+    "name": "TypeScript",
+    "year": 2012,
+    "description": "TypeScript é um superconjunto de JavaScript que adiciona tipagem estática opcional à linguagem.",
+    "link": "https://www.typescriptlang.org/docs/"
+  },{
+    "name": "Ruby",
+    "year": 1995,
+    "description": "Ruby é uma linguagem de programação dinâmica e de código aberto com foco na simplicidade e produtividade.",
+    "link": "https://www.ruby-lang.org/pt/documentation/"
+  },{
+    "name": "Go",
+    "year": 2009,
+    "description": "Go (ou Golang) é uma linguagem de programação de código aberto criada pelo Google, focada em simplicidade e eficiência.",
+    "link": "https://go.dev/doc/"
+  }
+]
