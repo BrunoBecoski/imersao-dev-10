@@ -63,7 +63,7 @@ div input:focus {
   box-shadow: 0 0 0 0.1rem var(--tertiary-color);
 }
 
-#search-button {
+button {
   padding: 1rem 2rem;
   border-radius: 1rem;
   border: none;
@@ -78,13 +78,13 @@ div input:focus {
   border: 1px solid var(--bg-color);
 }
 
-#search-button:hover {
+button:hover {
   background-color: var(--primary-color);
   color: var(--bg-color);
   box-shadow: 0 0 0 0.1rem var(--primary-color);
 }
 
-#search-button:active {
+button:active {
   transform: scale(0.98);
 }
 
