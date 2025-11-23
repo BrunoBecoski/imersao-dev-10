@@ -23,6 +23,8 @@ async function handleSearch() {
 }
 
 function renderCards(filteredData) {
+  cardContainer__element.innerHTML = ''
+
   for (let data of filteredData) {
     const article__element = document.createElement('article')
 
