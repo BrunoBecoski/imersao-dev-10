@@ -5,15 +5,20 @@
 }
 
 :root {
-  --primary-color: #8ab4f8;
+  --primary-color: #C7B15B;
   --secondary-color: #e8eaed;
   --tertiary-color: #9aa0a6;
-  --bg-color: #202124;
+
+  --primary-bg-color: #3E4638;
+  --secondary-bg-color: #4C5845;
+
+  --primary-border-color: #2C3128;
+  --secondary-border-color: #878F80;
 }
 
 body {
   margin: 0;
-  background: var(--bg-color);
+  background: var(--secondary-bg-color);
   color: var(--secondary-color);
   font-family: "Quicksand", sans-serif;
 }
@@ -25,7 +30,7 @@ header {
   justify-content: space-around;
   position: sticky;
   top: 0;
-  background: var(--bg-color);
+  background: var(--secondary-bg-color);
   z-index: 10;
   border-bottom: 1px solid var(--bg-color);
   gap: 1rem;
@@ -36,57 +41,64 @@ header h1 {
   margin: 0;
   font-weight: 500;
   white-space: nowrap;
+  color: var(--primary-color);
 }
 
-div input {
+header div {
+  display: flex;
+}
+
+input {
+  color: var(--secondary-color);
   padding: 0.375rem 0.75rem;
-  border-radius: 1rem;
-  border: 1px solid var(--tertiary-color);
-  background: var(--bg-color);
+  background: var(--primary-bg-color);
+
+  border-top-color: var(--primary-border-color);
+  border-left-color: var(--primary-border-color);
+  border-right-color: var(--secondary-border-color);
+  border-bottom-color: var(--secondary-border-color);
+
   font-family: inherit;
   font-size: 1.5rem;
   transition: all 0.2s ease;
   width: 30rem;
-  color: var(--secondary-color);
+  height: 3rem;
   margin-right: .5rem;
 }
 
-div input::placeholder {
+input::placeholder {
   font-size: 1.2rem;
   font-weight: 300;
   color: var(--tertiary-color);
 }
 
-div input:focus {
+input:focus {
   outline: none;
-  border-color: var(--bg-color);
-  box-shadow: 0 0 0 0.1rem var(--tertiary-color);
+  border-color: var(--primary-color);
 }
 
 button {
-  padding: 1rem 2rem;
-  border-radius: 1rem;
-  border: none;
+  padding-right: 2rem;
+
+  border-top-color: var(--secondary-border-color) ;
+  border-left-color: var(--secondary-border-color);
+  border-right-color: var(--primary-border-color);
+  border-bottom-color: var(--primary-border-color);
+  
+  height: 3rem;
+
   cursor: pointer;
   font-family: inherit;
   font-weight: 500;
   font-size: 1rem;
-  white-space: nowrap;
-  transition: background-color 0.2s ease, color 0.2s ease;
-  background-color: var(--bg-color);
+  background-color: var(--secondary-bg-color);
   color: var(--secondary-color);
-  border: 1px solid var(--bg-color);
 }
 
 button:hover {
-  background-color: var(--primary-color);
-  color: var(--bg-color);
-  box-shadow: 0 0 0 0.1rem var(--primary-color);
+  color: var(--primary-color);
 }
 
-button:active {
-  transform: scale(0.98);
-}
 
 main {
   overflow-y: scroll;
@@ -94,6 +106,7 @@ main {
   margin: 0 auto;
   margin-top: 2rem;
   height: calc(100vh - 10rem - 4rem);
+  background-color: var(--primary-bg-color);
 }
 
 article {
@@ -152,9 +165,8 @@ footer {
   left: 0;
   width: 100%;
   color: var(--tertiary-color);
-  background-color: var(--bg-color);
+  background-color: var(--secondary-bg-color);
   padding: 15px 20px;
-  border-top: 1px solid #3c4043;
   font-size: 0.8rem;
 }
 
