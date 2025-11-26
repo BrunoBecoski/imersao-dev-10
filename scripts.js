@@ -30,9 +30,11 @@ function renderCards(filteredData) {
 
     article__element.innerHTML = `
       <h2>${data.name}</h2>
-      <p>${data.year}</p>
-      <p>${data.description}</p>
-      <a href="${data.link}" target="_blank">Saiba mais</a>
+      <div>
+        <i>${data.year}</i>
+        <p>${data.description}</p>
+        <a href="${data.link}" target="_blank">Saiba mais</a>
+      </div>
     `
 
     cardContainer__element.appendChild(article__element)

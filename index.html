@@ -13,7 +13,12 @@
     <header>
       <h1>🗃️ Base de conhecimento</h1>
       <div>
-        <input type="text" id="search-input" placeholder="Digite uma linguagem de programação"/>
+        <input 
+          type="text"
+          id="search-input"
+          placeholder="Digite uma linguagem de programação" 
+          onkeydown="((e) => { if (e.key === 'Enter') { handleSearch() }})(event)"
+        />
         <button type="button" id="search-button" onClick="handleSearch()">Buscar</button>
       </div>
     </header>
