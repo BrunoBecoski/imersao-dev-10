@@ -25,6 +25,8 @@ async function handleSearch() {
 function renderCards(filteredData) {
   cardContainer__element.innerHTML = ''
 
+  cardContainer__element.scrollTop = 0
+
   for (let data of filteredData) {
     const article__element = document.createElement('article')
 
