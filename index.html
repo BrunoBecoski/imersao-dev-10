@@ -12,15 +12,29 @@
   <body>
     <header>
       <h1>🗃️ Base de conhecimento</h1>
+      
       <div>
-        <input 
-          type="text"
-          id="search-input"
-          placeholder="Digite uma linguagem de programação" 
-          onkeydown="((e) => { if (e.key === 'Enter') { handleSearch() }})(event)"
-        />
-        <button type="button" id="search-button" onClick="handleSearch()">Buscar</button>
-      </div>
+        <div>
+          <input 
+            type="text"
+            id="search-input"
+            placeholder="Digite uma linguagem de programação" 
+            onkeydown="((e) => { if (e.key === 'Enter') { handleSearch() }})(event)"
+          />
+          <button type="button" id="search-button" onClick="handleSearch()">Buscar</button>
+        </div>
+
+        <div>
+          <label>Filtrar
+            <input type="checkbox" />
+          </label>
+            <select>
+              <option value=""></option>
+              <option value="year">Ano</option>
+              <option value="alphabet">Alfabeto</option>
+            </select>
+        </div>
+      </div>     
     </header>
 
     <main>
