@@ -17,18 +17,18 @@
         <div>
           <input 
             type="text"
-            id="search-input"
+            id="input"
             placeholder="Digite uma linguagem de programação" 
             onkeydown="((e) => { if (e.key === 'Enter') { handleSearch() }})(event)"
           />
-          <button type="button" id="search-button" onClick="handleSearch()">Buscar</button>
+          <button id="button" type="button" onClick="handleSearch()">Buscar</button>
         </div>
 
         <div>
           <label>Ordem
-            <input type="checkbox" />
+            <input id="checkbox" type="checkbox"/>
           </label>
-          <select>
+          <select id="select" >
             <option value="alphabet">Alfabética</option>
             <option value="create">Criação</option>
           </select>
@@ -37,7 +37,7 @@
     </header>
 
     <main>
-      <section id="card-container">
+      <section id="section">
       </section>
     </main>
 

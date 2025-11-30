@@ -1,5 +1,7 @@
-const cardContainer__element = document.getElementById('card-container')
-const input__element = document.getElementById('search-input')
+const input__element = document.getElementById('input')
+const checkbox__element = document.getElementById('checkbox')
+const select__element = document.getElementById('select')
+const section__element = document.getElementById('section')
 
 let apiData = []
 
@@ -23,9 +25,8 @@ async function handleSearch() {
 }
 
 function renderCards(filteredData) {
-  cardContainer__element.innerHTML = ''
-
-  cardContainer__element.scrollTop = 0
+  section__element.innerHTML = ''
+  section__element.scrollTop = 0
 
   for (let data of filteredData) {
     const article__element = document.createElement('article')
@@ -39,6 +40,22 @@ function renderCards(filteredData) {
       </div>
     `
 
-    cardContainer__element.appendChild(article__element)
+    section__element.appendChild(article__element)
   }
 }
+
+checkbox__element.addEventListener('change', (event) => {
+  const isChecked = event.target.checked
+  const optionSelected = select__element.value
+
+  console.log(isChecked)
+  console.log(optionSelected)
+})
+
+select__element.addEventListener('change', (event) => {
+  const optionSelected = event.target.value 
+  const isChecked = checkbox__element.checked
+
+  console.log(optionSelected)
+  console.log(isChecked)
+})
