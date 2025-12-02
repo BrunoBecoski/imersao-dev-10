@@ -17,11 +17,17 @@ async function handleSearch() {
   }
 
   const searchTerm = input__element.value.toLowerCase()
+  const filteredData = filterData(searchTerm)
+
+  renderCards(filteredData)
+}
+
+function filterData(searchTerm) {
   const filteredData = apiData.filter(data =>
     data.name.toLowerCase().includes(searchTerm) || data.description.toLowerCase().includes(searchTerm)
   )
 
-  renderCards(filteredData)
+  return filteredData
 }
 
 function renderCards(filteredData) {
@@ -47,15 +53,19 @@ function renderCards(filteredData) {
 checkbox__element.addEventListener('change', (event) => {
   const isChecked = event.target.checked
   const optionSelected = select__element.value
+  const searchTerm = input__element.value.toLowerCase()
 
   console.log(isChecked)
   console.log(optionSelected)
+  console.log(searchTerm)
 })
 
 select__element.addEventListener('change', (event) => {
   const optionSelected = event.target.value 
   const isChecked = checkbox__element.checked
+  const searchTerm = input__element.value.toLowerCase()
 
   console.log(optionSelected)
   console.log(isChecked)
+  console.log(searchTerm)
 })
