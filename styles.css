@@ -75,10 +75,22 @@ header > div {
   gap: 1rem;
 }
 
-header > div div:last-child  {
+header > div > div:last-child {
   display: flex;
   align-items: center;
   gap: 1rem;
+}
+
+header > div > div:last-child div:first-child {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+header > div > div:last-child div:last-child {
+  display: flex;
+  align-items: start;
+  gap: .5rem;
 }
 
 input[type="text"] {
@@ -118,18 +130,20 @@ label {
   font-size: 1.2rem;
   display: flex;
   align-items: center;
+  justify-content: center;
+  gap: .5rem;
 }
 
 label:hover {
   cursor: pointer;
 }
 
-label:has(input[type="checkbox"]:checked) {
+label:has(input[type="checkbox"]:checked),
+label:has(input[type="radio"]:checked) {
   color: var(--primary-color);
 }
 
 input[type="checkbox"] {
-  margin-left: .5rem;
   cursor: pointer;
   display: inline-block;
   position: relative;
@@ -155,6 +169,40 @@ input[type="checkbox"]::after {
 }
 
 input[type="checkbox"]:checked::after {
+  border-top-color: var(--primary-border-color);
+  border-left-color: var(--primary-border-color);
+  border-right-color: var(--secondary-border-color);
+  border-bottom-color: var(--secondary-border-color);
+  background-color: transparent;
+}
+
+input[type="radio"] {
+  cursor: pointer;
+  accent-color: var(--primary-color);
+  width: 1rem;
+  height: 1rem;
+  position: relative;
+}
+
+input[type="radio"]::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  
+  border-radius: 50%;
+  border-width: 2px;
+  border-style: solid;
+  border-top-color: var(--secondary-border-color);
+  border-left-color: var(--secondary-border-color);
+  border-right-color: var(--primary-border-color);
+  border-bottom-color: var(--primary-border-color);
+  background-color: var(--secondary-bg-color); 
+}
+
+input[type="radio"]:checked::after {
   border-top-color: var(--primary-border-color);
   border-left-color: var(--primary-border-color);
   border-right-color: var(--secondary-border-color);
