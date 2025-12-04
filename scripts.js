@@ -2,12 +2,16 @@ const input__element = document.getElementById('input')
 const checkbox__element = document.getElementById('checkbox')
 const select__element = document.getElementById('select')
 const section__element = document.getElementById('section')
+const radio_1__element = document.getElementById('radio-1')
+const radio_2__element = document.getElementById('radio-2')
 
 let apiData = []
 
 checkbox__element.addEventListener('change', (event) => {
   const isChecked = event.target.checked
   const optionSelected = select__element.value
+  const radio_1 = radio_1__element.checked
+  const radio_2 = radio_2__element.checked
 
   if(isChecked) {
    const filteredData = filterData()
@@ -15,13 +19,26 @@ checkbox__element.addEventListener('change', (event) => {
     if(optionSelected === 'alphabet') {
       const orderFilteredData = orderByAlphabet(filteredData)
 
-      renderCards(orderFilteredData)
+      if (radio_1 === true) {
+        renderCards(orderFilteredData)
+      } 
+
+      if (radio_2 === true) {
+        renderCards(orderFilteredData.reverse())
+      }
+
     }
 
     if (optionSelected === 'create') {
       const orderFilteredData = orderByCreation(filteredData)
 
-      renderCards(orderFilteredData)
+      if (radio_1 === true) {
+        renderCards(orderFilteredData)
+      } 
+
+      if (radio_2 === true) {
+        renderCards(orderFilteredData.reverse())
+      }
     }
   }
 })
@@ -29,6 +46,8 @@ checkbox__element.addEventListener('change', (event) => {
 select__element.addEventListener('change', (event) => {
   const optionSelected = event.target.value 
   const isChecked = checkbox__element.checked
+    const radio_1 = radio_1__element.checked
+  const radio_2 = radio_2__element.checked
 
   if(isChecked) {
    const filteredData = filterData()
@@ -36,15 +55,57 @@ select__element.addEventListener('change', (event) => {
     if(optionSelected === 'alphabet') {
       const orderFilteredData = orderByAlphabet(filteredData)
 
-      renderCards(orderFilteredData)
+      if (radio_1 === true) {
+        renderCards(orderFilteredData)
+      } 
+
+      if (radio_2 === true) {
+        renderCards(orderFilteredData.reverse())
+      }
     }
 
     if (optionSelected === 'create') {
       const orderFilteredData = orderByCreation(filteredData)
 
-      renderCards(orderFilteredData)
+      if (radio_1 === true) {
+        renderCards(orderFilteredData)
+      } 
+
+      if (radio_2 === true) {
+        renderCards(orderFilteredData.reverse())
+      }
     }
   }
+})
+
+radio_1__element.addEventListener('change', (event) => {
+  const radioSelected = event.target.checked 
+  const isChecked = checkbox__element.checked
+
+  if(isChecked) {
+   const filteredData = filterData()
+
+    if(radioSelected === true) {
+      const orderFilteredData = orderByAlphabet(filteredData)
+
+      renderCards(orderFilteredData)
+    }
+  } 
+})
+
+radio_2__element.addEventListener('change', (event) => {
+  const radioSelected = event.target.checked 
+  const isChecked = checkbox__element.checked
+
+  if(isChecked) {
+   const filteredData = filterData()
+
+    if(radioSelected === true) {
+      const orderFilteredData = orderByAlphabet(filteredData)
+
+      renderCards(orderFilteredData.reverse())
+    }
+  } 
 })
 
 async function handleSearch() {
@@ -94,10 +155,11 @@ function orderByCreation(filteredData) {
     if (a.year < b.year) {
       return -1
     }
-
+    
     if (a.year > b.year) {
       return 1
     }
+    
     return 0
   })
 
