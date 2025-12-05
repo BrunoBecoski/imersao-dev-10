@@ -46,7 +46,7 @@ checkbox__element.addEventListener('change', (event) => {
 select__element.addEventListener('change', (event) => {
   const optionSelected = event.target.value 
   const isChecked = checkbox__element.checked
-    const radio_1 = radio_1__element.checked
+  const radio_1 = radio_1__element.checked
   const radio_2 = radio_2__element.checked
 
   if(isChecked) {
@@ -101,7 +101,7 @@ radio_2__element.addEventListener('change', (event) => {
    const filteredData = filterData()
 
     if(radioSelected === true) {
-      const orderFilteredData = orderByAlphabet(filteredData)
+      const orderFilteredData = orderByCreation(filteredData)
 
       renderCards(orderFilteredData.reverse())
     }
