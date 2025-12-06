@@ -13,15 +13,14 @@
     <header>
       <h1>🗃️ Base de conhecimento</h1>
       
-      <div>
+      <form id="form">
         <div>
           <input 
             type="text"
             id="input"
             placeholder="Digite uma linguagem de programação" 
-            onkeydown="((e) => { if (e.key === 'Enter') { handleSearch() }})(event)"
           />
-          <button id="button" type="button" onClick="handleSearch()">Buscar</button>
+          <button id="button" type="button">Buscar</button>
         </div>
 
         <div>
@@ -37,17 +36,17 @@
 
           <div>
             <label>
-              <input id="radio-1" type="radio" name="organize" value="increase" checked />
+              <input id="radio_1" type="radio" name="organize" value="increase" checked />
               Crescente
             </label>
 
             <label>
-              <input id="radio-2" type="radio" name="organize" value="decrease" />
+              <input id="radio_2" type="radio" name="organize" value="decrease" />
               Decrescente
             </label>
           </div>
         </div>
-      </div>     
+      </form>     
     </header>
 
     <main>

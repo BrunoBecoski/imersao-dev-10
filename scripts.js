@@ -1,114 +1,28 @@
+const form__element = document.getElementById('form')
+const button__element = document.getElementById('button')
 const input__element = document.getElementById('input')
 const checkbox__element = document.getElementById('checkbox')
 const select__element = document.getElementById('select')
+const radio_1__element = document.getElementById('radio_1')
+const radio_2__element = document.getElementById('radio_2')
 const section__element = document.getElementById('section')
-const radio_1__element = document.getElementById('radio-1')
-const radio_2__element = document.getElementById('radio-2')
 
 let apiData = []
+let hasTriggered = false
 
-checkbox__element.addEventListener('change', (event) => {
-  const isChecked = event.target.checked
-  const optionSelected = select__element.value
-  const radio_1 = radio_1__element.checked
-  const radio_2 = radio_2__element.checked
-
-  if(isChecked) {
-   const filteredData = filterData()
-
-    if(optionSelected === 'alphabet') {
-      const orderFilteredData = orderByAlphabet(filteredData)
-
-      if (radio_1 === true) {
-        renderCards(orderFilteredData)
-      } 
-
-      if (radio_2 === true) {
-        renderCards(orderFilteredData.reverse())
-      }
-
-    }
-
-    if (optionSelected === 'create') {
-      const orderFilteredData = orderByCreation(filteredData)
-
-      if (radio_1 === true) {
-        renderCards(orderFilteredData)
-      } 
-
-      if (radio_2 === true) {
-        renderCards(orderFilteredData.reverse())
-      }
-    }
-  }
-})
-
-select__element.addEventListener('change', (event) => {
-  const optionSelected = event.target.value 
-  const isChecked = checkbox__element.checked
-  const radio_1 = radio_1__element.checked
-  const radio_2 = radio_2__element.checked
-
-  if(isChecked) {
-   const filteredData = filterData()
-
-    if(optionSelected === 'alphabet') {
-      const orderFilteredData = orderByAlphabet(filteredData)
-
-      if (radio_1 === true) {
-        renderCards(orderFilteredData)
-      } 
-
-      if (radio_2 === true) {
-        renderCards(orderFilteredData.reverse())
-      }
-    }
-
-    if (optionSelected === 'create') {
-      const orderFilteredData = orderByCreation(filteredData)
-
-      if (radio_1 === true) {
-        renderCards(orderFilteredData)
-      } 
-
-      if (radio_2 === true) {
-        renderCards(orderFilteredData.reverse())
-      }
-    }
-  }
-})
-
-radio_1__element.addEventListener('change', (event) => {
-  const radioSelected = event.target.checked 
-  const isChecked = checkbox__element.checked
-
-  if(isChecked) {
-   const filteredData = filterData()
-
-    if(radioSelected === true) {
-      const orderFilteredData = orderByAlphabet(filteredData)
-
-      renderCards(orderFilteredData)
-    }
-  } 
-})
-
-radio_2__element.addEventListener('change', (event) => {
-  const radioSelected = event.target.checked 
-  const isChecked = checkbox__element.checked
-
-  if(isChecked) {
-   const filteredData = filterData()
-
-    if(radioSelected === true) {
-      const orderFilteredData = orderByCreation(filteredData)
-
-      renderCards(orderFilteredData.reverse())
-    }
-  } 
-})
+form__element.addEventListener('submit', (event) => event.preventDefault())
+input__element.addEventListener('keydown', (event) => event.key === 'Enter' && handleSearch())
+button__element.addEventListener('click', handleSearch)
+checkbox__element.addEventListener('change', handleSearch)
+select__element.addEventListener('change', handleSearch)
+radio_1__element.addEventListener('change', handleSearch)
+radio_2__element.addEventListener('change', handleSearch)
 
 async function handleSearch() {
+  if (hasTriggered) return
+
+  hasTriggered = true
+
   if  (apiData.length === 0) {
     try {
       const response = await fetch('data.json')
@@ -119,11 +33,39 @@ async function handleSearch() {
     }
   }
 
-  checkbox__element.checked = false
+  let filteredData = filterData()
 
-  const filteredData = filterData()
+  if (checkbox__element.checked) {
+
+    if(select__element.value === 'alphabet') {
+      const orderFilteredData = orderByAlphabet(filteredData)
+
+      if (radio_1__element.checked === true) {
+        filteredData = (orderFilteredData)
+      } 
+
+      if (radio_2__element.checked === true) {
+        filteredData = (orderFilteredData.reverse())
+      }
+    }
+
+    if (select__element.value  === 'create') {
+      const orderFilteredData = orderByCreation(filteredData)
+
+      if (radio_1__element.checked === true) {
+        filteredData = (orderFilteredData)
+      } 
+
+      if (radio_2__element.checked === true) {
+        filteredData = (orderFilteredData.reverse())
+      }
+    }
+
+  }
 
   renderCards(filteredData)
+        
+  hasTriggered = false
 }
 
 function filterData() {
