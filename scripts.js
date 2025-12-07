@@ -3,8 +3,8 @@ const button__element = document.getElementById('button')
 const input__element = document.getElementById('input')
 const checkbox__element = document.getElementById('checkbox')
 const select__element = document.getElementById('select')
-const radio_1__element = document.getElementById('radio_1')
-const radio_2__element = document.getElementById('radio_2')
+const radio_1__element = document.getElementById('radio-1')
+const radio_2__element = document.getElementById('radio-2')
 const section__element = document.getElementById('section')
 
 let apiData = []
@@ -32,36 +32,8 @@ async function handleSearch() {
       return
     }
   }
-
-  let filteredData = filterData()
-
-  if (checkbox__element.checked) {
-
-    if(select__element.value === 'alphabet') {
-      const orderFilteredData = orderByAlphabet(filteredData)
-
-      if (radio_1__element.checked === true) {
-        filteredData = (orderFilteredData)
-      } 
-
-      if (radio_2__element.checked === true) {
-        filteredData = (orderFilteredData.reverse())
-      }
-    }
-
-    if (select__element.value  === 'create') {
-      const orderFilteredData = orderByCreation(filteredData)
-
-      if (radio_1__element.checked === true) {
-        filteredData = (orderFilteredData)
-      } 
-
-      if (radio_2__element.checked === true) {
-        filteredData = (orderFilteredData.reverse())
-      }
-    }
-
-  }
+  
+  const filteredData = filterData()
 
   renderCards(filteredData)
         
@@ -70,14 +42,29 @@ async function handleSearch() {
 
 function filterData() {
   const searchTerm = input__element.value.toLowerCase()
-  const filteredData = apiData.filter(data =>
+  const isChecked = checkbox__element.checked
+
+  let filteredData = apiData.filter(data =>
     data.name.toLowerCase().includes(searchTerm) || data.description.toLowerCase().includes(searchTerm)
   )
+
+  if (isChecked) {
+    const selectValue = select__element.value
+    const radioValue = radio_1__element.checked && radio_1__element.value || radio_2__element.checked && radio_2__element.value
+
+    if(selectValue === 'alphabet') {
+      filteredData = orderByAlphabet(filteredData, radioValue)
+    }
+
+    if (selectValue  === 'create') {
+      filteredData = orderByCreation(filteredData, radioValue)
+    } 
+  }
 
   return filteredData
 }
 
-function orderByAlphabet(filteredData) {
+function orderByAlphabet(filteredData, valueRadio) {
   const orderFilteredData = filteredData.sort((a, b) => {
     if (a.name < b.name) {
       return -1
@@ -92,7 +79,7 @@ function orderByAlphabet(filteredData) {
   return orderFilteredData
 }
 
-function orderByCreation(filteredData) {
+function orderByCreation(filteredData, valueRadio) {
   const orderFilteredData = filteredData.sort((a, b) => {
     if (a.year < b.year) {
       return -1
