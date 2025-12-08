@@ -65,32 +65,53 @@ function filterData() {
 }
 
 function orderByAlphabet(filteredData, valueRadio) {
-  const orderFilteredData = filteredData.sort((a, b) => {
-    if (a.name < b.name) {
-      return -1
-    }
+  let orderFilteredData
 
-    if (a.name > b.name) {
-      return 1
-    }
-    return 0
-  })
+  if (valueRadio === 'increase') {
+    orderFilteredData = filteredData.sort((a, b) => {
+      if (a.name < b.name) return -1
 
+      if (a.name > b.name) return 1
+
+      return 0
+    })
+  }
+
+  if (valueRadio === 'decrease') {
+    orderFilteredData = filteredData.sort((a, b) => {
+      if (a.name > b.name) return -1
+
+      if (a.name < b.name) return 1
+
+      return 0
+    })
+  }
+  
   return orderFilteredData
 }
 
 function orderByCreation(filteredData, valueRadio) {
-  const orderFilteredData = filteredData.sort((a, b) => {
-    if (a.year < b.year) {
-      return -1
-    }
-    
-    if (a.year > b.year) {
-      return 1
-    }
-    
-    return 0
-  })
+  let orderFilteredData 
+
+  if (valueRadio === 'increase') {
+    orderFilteredData = filteredData.sort((a, b) => {
+      if (a.name < b.name) return -1
+
+      if (a.year > b.year) return 1
+
+      return 0
+    })
+  }
+
+  if (valueRadio === 'decrease')  {
+    orderFilteredData = filteredData.sort((a, b) => {
+      if (a.year > b.year) return -1
+      
+      if (a.year < b.year) return 1
+      
+      return 0
+    })
+  }
 
   return orderFilteredData
 }
