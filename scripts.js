@@ -65,55 +65,41 @@ function filterData() {
 }
 
 function orderByAlphabet(filteredData, valueRadio) {
-  let orderFilteredData
+  return filteredData.sort((data1, data2) => {
+    switch (valueRadio) {
+      case 'increase':
+        if (data1.name < data2.name) return -1
+        if (data1.name > data2.name) return 1
+        return 0
 
-  if (valueRadio === 'increase') {
-    orderFilteredData = filteredData.sort((a, b) => {
-      if (a.name < b.name) return -1
+      case 'decrease':
+        if (data1.name > data2.name) return -1
+        if (data1.name < data2.name) return 1
+        return 0
 
-      if (a.name > b.name) return 1
-
-      return 0
-    })
-  }
-
-  if (valueRadio === 'decrease') {
-    orderFilteredData = filteredData.sort((a, b) => {
-      if (a.name > b.name) return -1
-
-      if (a.name < b.name) return 1
-
-      return 0
-    })
-  }
-  
-  return orderFilteredData
+      default:
+        return 0
+    }
+  })
 }
 
 function orderByCreation(filteredData, valueRadio) {
-  let orderFilteredData 
+  return filteredData.sort((data1, data2) => {
+    switch (valueRadio) {
+      case 'increase':
+        if (data1.year < data2.year) return -1
+        if (data1.year > data2.year) return 1
+        return 0
+    
+      case 'decrease':
+        if (data1.year > data2.year) return -1
+        if (data1.year < data2.year) return 1
+        return 0
 
-  if (valueRadio === 'increase') {
-    orderFilteredData = filteredData.sort((a, b) => {
-      if (a.name < b.name) return -1
-
-      if (a.year > b.year) return 1
-
-      return 0
-    })
-  }
-
-  if (valueRadio === 'decrease')  {
-    orderFilteredData = filteredData.sort((a, b) => {
-      if (a.year > b.year) return -1
-      
-      if (a.year < b.year) return 1
-      
-      return 0
-    })
-  }
-
-  return orderFilteredData
+      default:
+        return 0
+    }
+  })
 }
 
 function renderCards(filteredData) {
