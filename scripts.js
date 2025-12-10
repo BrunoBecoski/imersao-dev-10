@@ -45,7 +45,7 @@ function filterData() {
   const isChecked = checkbox__element.checked
 
   let filteredData = apiData.filter(data =>
-    data.name.toLowerCase().includes(searchTerm) || data.description.toLowerCase().includes(searchTerm)
+    data.name.toLowerCase().includes(searchTerm) || data.tags.includes(searchTerm)
   )
 
   if (isChecked) {
