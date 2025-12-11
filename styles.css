@@ -311,7 +311,7 @@ article div {
   border-bottom-color: var(--primary-border-color);
 }
 
-article i {
+article strong {
   color: var(--secondary-color);
 }
 
@@ -327,6 +327,21 @@ article a {
 
 article a:hover {
   text-decoration: underline;
+}
+
+article span {
+  display: block;
+  text-align: end;
+}
+
+article i {
+  font-size: 1rem;
+  cursor: pointer;
+  color: var(--secondary-color);
+}
+
+article i:hover {
+  color: var(--primary-color);
 }
 
 footer {

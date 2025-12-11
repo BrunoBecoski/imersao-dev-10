@@ -112,9 +112,10 @@ function renderCards(filteredData) {
     article__element.innerHTML = `
       <h2>${data.name}</h2>
       <div>
-        <i>${data.year}</i>
+        <strong>${data.year}</strong>
         <p>${data.description}</p>
         <a href="${data.link}" target="_blank">Saiba mais</a>
+        <span>${data.tags.map(tag => `<i> ${tag}</i>`)}</span>
       </div>
     `
 
