@@ -115,10 +115,24 @@ function renderCards(filteredData) {
         <strong>${data.year}</strong>
         <p>${data.description}</p>
         <a href="${data.link}" target="_blank">Saiba mais</a>
-        <span>${data.tags.map(tag => `<i> ${tag}</i>`)}</span>
+        <span></span>
       </div>
     `
 
+      data.tags.forEach(tag => {
+        const i__element = document.createElement('i')
+        i__element.innerText = ' ' + tag
+        i__element.onclick = () => handleTag(tag)
+
+        const span__element = article__element.querySelector('span')
+      
+        span__element.appendChild(i__element)
+      })
+
     section__element.appendChild(article__element)
   }
+}
+
+function handleTag(tag) {
+  console.log(tag)
 }
