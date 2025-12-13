@@ -121,11 +121,11 @@ function renderCards(filteredData) {
 
       data.tags.forEach(tag => {
         const i__element = document.createElement('i')
-        i__element.innerText = ' ' + tag
+        i__element.innerText = tag
         i__element.onclick = () => handleTag(tag)
 
         const span__element = article__element.querySelector('span')
-      
+
         span__element.appendChild(i__element)
       })
 
@@ -134,5 +134,6 @@ function renderCards(filteredData) {
 }
 
 function handleTag(tag) {
-  console.log(tag)
+  input__element.value = tag
+  handleSearch()
 }
