@@ -40,12 +40,18 @@ async function handleSearch() {
   hasTriggered = false
 }
 
+function handleTag(tag) {
+  input__element.value = tag
+  handleSearch()
+}
+
 function filterData() {
   const searchTerm = input__element.value.toLowerCase()
   const isChecked = checkbox__element.checked
 
-  let filteredData = apiData.filter(data =>
-    data.name.toLowerCase().includes(searchTerm) || data.tags.includes(searchTerm)
+  const filteredData = apiData.filter(data =>
+    data.name.toLowerCase().includes(searchTerm) || data.tags.some(tag => tag.includes(searchTerm))
+
   )
 
   if (isChecked) {
@@ -131,9 +137,4 @@ function renderCards(filteredData) {
 
     section__element.appendChild(article__element)
   }
-}
-
-function handleTag(tag) {
-  input__element.value = tag
-  handleSearch()
 }
