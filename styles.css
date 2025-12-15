@@ -280,6 +280,7 @@ article {
 }
 
 article h2 {
+  font-size: 1.8rem;
   padding: .5rem;
   color: var(--primary-color);
   width: fit-content;
@@ -313,8 +314,9 @@ article strong {
 }
 
 article p {
-  line-height: 1.6;
+  font-size: 1.2rem;
   color: var(--secondary-color);
+  margin-block: .5rem 1rem;
 }
 
 article a {
@@ -336,7 +338,8 @@ article i {
   margin-left: 1rem;
   font-size: 1rem;
   cursor: pointer;
-  color: var(--secondary-color);
+  color: var(--tertiary-color);
+  display: inline-block;
 }
 
 article i:hover {

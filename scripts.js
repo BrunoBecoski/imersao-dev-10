@@ -49,7 +49,7 @@ function filterData() {
   const searchTerm = input__element.value.toLowerCase()
   const isChecked = checkbox__element.checked
 
-  const filteredData = apiData.filter(data =>
+  let filteredData = apiData.filter(data =>
     data.name.toLowerCase().includes(searchTerm) || data.tags.some(tag => tag.includes(searchTerm))
 
   )
@@ -121,19 +121,19 @@ function renderCards(filteredData) {
         <strong>${data.year}</strong>
         <p>${data.description}</p>
         <a href="${data.link}" target="_blank">Saiba mais</a>
-        <span></span>
       </div>
+      <span></span>
     `
+        
+    data.tags.forEach(tag => {
+      const i__element = document.createElement('i')
+      i__element.innerText = `# ${tag}`
+      i__element.onclick = () => handleTag(tag)
 
-      data.tags.forEach(tag => {
-        const i__element = document.createElement('i')
-        i__element.innerText = tag
-        i__element.onclick = () => handleTag(tag)
+      const span__element = article__element.querySelector('span')
 
-        const span__element = article__element.querySelector('span')
-
-        span__element.appendChild(i__element)
-      })
+      span__element.appendChild(i__element)
+    })
 
     section__element.appendChild(article__element)
   }
