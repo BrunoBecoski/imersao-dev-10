@@ -14,7 +14,7 @@
       <h1>🗃️ Base de conhecimento</h1>
       
       <form id="form">
-        <div>
+        <div class=form-input>
           <input 
             type="text"
             id="input"
@@ -23,18 +23,14 @@
           <button id="button" type="button">Buscar</button>
         </div>
 
-        <div>
-          <div>
-            <label>Ordem
+        <div class="form-order">
+            <label>Ordenar
               <input id="checkbox" type="checkbox"/>
             </label>
             <select id="select" >
               <option value="alphabet">Alfabética</option>
               <option value="create">Criação</option>
             </select>
-          </div>
-
-          <div>
             <label>
               <input id="radio-1" type="radio" name="organize" value="increase" checked />
               Crescente
@@ -44,7 +40,6 @@
               <input id="radio-2" type="radio" name="organize" value="decrease" />
               Decrescente
             </label>
-          </div>
         </div>
       </form>     
     </header>
