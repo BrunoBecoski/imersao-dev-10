@@ -37,6 +37,7 @@ header {
 }
 
 header h1 {
+  margin-block: 0;
   text-align: center;
   color: var(--primary-color);
 }
@@ -44,6 +45,11 @@ header h1 {
 header form {
   display: flex;
   flex-direction: column;
+}
+
+header .form-input {
+  display: flex;
+  align-items: center;
 }
 
 header .form-order {
@@ -381,9 +387,40 @@ button:active {
     flex-direction: column;
     justify-content: unset;
     margin-top: .5rem;
+    height: 12rem;
+  }
+
+  header h1 {
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 620px) {
+
+  body {
+    padding-top: 0;
+  }
+
+   main {
+    height: calc(100vh - 15rem - 8rem);
   }
 
   header {
-    height: 12rem;
+    height: 15rem;
+    justify-content: center;
+    margin-top: .5rem;
+  }
+
+  .form-input {
+    align-items: center;
+  }
+
+  .form-order {
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+
+  input[type="text"] {
+    width: 100%;
   }
 }
