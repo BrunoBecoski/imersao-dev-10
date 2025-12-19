@@ -112,29 +112,35 @@ function renderCards(filteredData) {
   section__element.innerHTML = ''
   section__element.scrollTop = 0
 
-  for (let data of filteredData) {
-    const article__element = document.createElement('article')
-
-    article__element.innerHTML = `
-      <h2>${data.name}</h2>
-      <div>
-        <strong>${data.year}</strong>
-        <p>${data.description}</p>
-        <a href="${data.link}" target="_blank">Saiba mais</a>
-      </div>
-      <span></span>
-    `
-        
-    data.tags.forEach(tag => {
-      const i__element = document.createElement('i')
-      i__element.innerText = `# ${tag}`
-      i__element.onclick = () => handleTag(tag)
-
-      const span__element = article__element.querySelector('span')
-
-      span__element.appendChild(i__element)
-    })
-
-    section__element.appendChild(article__element)
+  if (filteredData.length === 0) {
+    const i__element = document.createElement('i')
+    i__element.innerText = 'Nenhuma linguagem de programação encontrada'
+    section__element.appendChild(i__element)
+  } else {
+    for (let data of filteredData) {
+      const article__element = document.createElement('article')
+  
+      article__element.innerHTML = `
+        <h2>${data.name}</h2>
+        <div>
+          <strong>${data.year}</strong>
+          <p>${data.description}</p>
+          <a href="${data.link}" target="_blank">Saiba mais</a>
+        </div>
+        <span></span>
+      `
+          
+      data.tags.forEach(tag => {
+        const i__element = document.createElement('i')
+        i__element.innerText = `# ${tag}`
+        i__element.onclick = () => handleTag(tag)
+  
+        const span__element = article__element.querySelector('span')
+  
+        span__element.appendChild(i__element)
+      })
+  
+      section__element.appendChild(article__element)
+    }
   }
 }

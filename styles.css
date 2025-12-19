@@ -77,6 +77,15 @@ section {
   border-bottom-color: var(--secondary-border-color);
 }
 
+section > i {
+  display: block;
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 1.5rem;
+  font-style: italic;
+  color: var(--tertiary-color);
+}
+
 article + article {
   margin-top: 1rem;
 }
