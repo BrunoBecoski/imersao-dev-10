@@ -36,10 +36,24 @@ header {
   height: 8rem;
 }
 
-header h1 {
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 1rem;
+}
+
+.logo h1 {
   margin-block: 0;
   text-align: center;
   color: var(--primary-color);
+}
+
+.logo span {
+  text-align: center;
+  width: 100%;
+  font-family: "Silkscreen", sans-serif;
+  color: var(--secondary-color);
 }
 
 header form {
@@ -399,7 +413,8 @@ button:active {
     height: 12rem;
   }
 
-  header h1 {
+  .logo {
+    gap: .5rem;
     margin-bottom: 1rem;
   }
 }
@@ -411,11 +426,11 @@ button:active {
   }
 
    main {
-    height: calc(100vh - 15rem - 8rem);
+    height: calc(100vh - 18rem - 8rem);
   }
 
   header {
-    height: 15rem;
+    height: 18rem;
     justify-content: center;
     margin-top: .5rem;
   }

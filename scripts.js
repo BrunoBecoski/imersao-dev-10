@@ -1,3 +1,4 @@
+const result__element = document.getElementById('results')
 const form__element = document.getElementById('form')
 const button__element = document.getElementById('button')
 const input__element = document.getElementById('input')
@@ -114,9 +115,12 @@ function renderCards(filteredData) {
 
   if (filteredData.length === 0) {
     const i__element = document.createElement('i')
+    result__element.innerText = `0 resultados`
     i__element.innerText = 'Nenhuma linguagem de programação encontrada'
     section__element.appendChild(i__element)
   } else {
+    result__element.innerText = `${filteredData.length} resultados`
+
     for (let data of filteredData) {
       const article__element = document.createElement('article')
   
