@@ -1,3 +1,5 @@
+const url = new URL(window.location)
+
 const result__element = document.getElementById('results')
 const form__element = document.getElementById('form')
 const button__element = document.getElementById('button')
@@ -19,6 +21,13 @@ select__element.addEventListener('change', handleSearch)
 radio_1__element.addEventListener('change', handleSearch)
 radio_2__element.addEventListener('change', handleSearch)
 
+const searchParam = new URLSearchParams(url.search).get('search')
+
+if (searchParam) {
+  input__element.value = searchParam
+  handleSearch()
+}
+
 async function handleSearch() {
   if (hasTriggered) return
 
@@ -33,11 +42,11 @@ async function handleSearch() {
       return
     }
   }
-  
+
   const filteredData = filterData()
 
   renderCards(filteredData)
-        
+
   hasTriggered = false
 }
 
@@ -49,6 +58,11 @@ function handleTag(tag) {
 function filterData() {
   const searchTerm = input__element.value.toLowerCase()
   const isChecked = checkbox__element.checked
+
+  if (searchTerm) {
+    url.searchParams.set('search', searchTerm)
+    window.history.pushState({}, '', url)
+  }
 
   let filteredData = apiData.filter(data =>
     data.name.toLowerCase().includes(searchTerm) || data.tags.some(tag => tag.includes(searchTerm))
