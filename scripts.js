@@ -21,9 +21,22 @@ select__element.addEventListener('change', handleSearch)
 radio_1__element.addEventListener('change', handleSearch)
 radio_2__element.addEventListener('change', handleSearch)
 
+window.addEventListener('popstate', (event) => {
+
+  if (event.state?.search) {
+    input__element.value = event.state.search
+  } else {
+    input__element.value = ''
+    document.title = 'Base de Conhecimento'
+  }
+
+  handleSearch()
+})
+
 const searchParam = new URLSearchParams(url.search).get('search')
 
 if (searchParam) {
+  document.title = `${searchParam} - Base de Conhecimento`
   input__element.value = searchParam
   handleSearch()
 }
@@ -60,13 +73,13 @@ function filterData() {
   const isChecked = checkbox__element.checked
 
   if (searchTerm) {
+    document.title = `${searchTerm} - Base de Conhecimento`
     url.searchParams.set('search', searchTerm)
-    window.history.pushState({}, '', url)
+    window.history.pushState({ search: searchTerm }, '', url)
   }
 
   let filteredData = apiData.filter(data =>
     data.name.toLowerCase().includes(searchTerm) || data.tags.some(tag => tag.includes(searchTerm))
-
   )
 
   if (isChecked) {
