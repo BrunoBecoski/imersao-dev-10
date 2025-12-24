@@ -76,6 +76,10 @@ function filterData() {
     document.title = `${searchTerm} - Base de Conhecimento`
     url.searchParams.set('search', searchTerm)
     window.history.pushState({ search: searchTerm }, '', url)
+  } else {
+    url.searchParams.delete('search')
+    window.history.pushState({ search: '' }, '', url)
+    document.title = 'Base de Conhecimento'
   }
 
   let filteredData = apiData.filter(data =>
