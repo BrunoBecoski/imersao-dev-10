@@ -1,39 +1,41 @@
-<h1 align="center">Imersão DEV 10 - Alura</h1>
-
-<p align="center">Projeto para pesquisar sobre linguagens de programação</p>
+# Imersão DEV 10 - Alura
+Aplicação para pesquisar sobre linguagens de programação com os dados gerados pelo (Gemini).
 
 <img src=".github/gif-1.gif" alt="Gif 1"/>
 
-<h2>Tecnologias</h2>
-<ul>
-  <li>HTML</li>
-  <li>CSS</li>
-  <li>JavaScript</li>
-</ul>
+O que ele faz
+- Pesquisa pelo nome da linguagem de programação ou palavra-chave
+- Ordena pelo Nome ou Ano de criação
 
-<h3>Ordem Alfabética</h3>
+### Ordem Alfabética
 <img src=".github/gif-2.gif" alt="Gif 2" />
 
-<h3>Ordem de Criação</h3>
+### Ordem Ano de Criação
 <img src=".github/gif-3.gif" alt="Gif 3" />
 
-<h3>Pesquisar com a palavra-chave</h3>
+### Pesquisar com a palavra-chave
 <img src=".github/gif-4.gif" alt="Gif 4" />
+  
+## Tecnologias
+- HTML
+- CSS
+- JavaScript
 
+# Gerador de dado da Base de Conhecimento (Gemini)
 
-<h1>Node</h1>
-
-<h2>Gerador de Base de Conhecimento (Gemini)</h2>
-
-Descrição curta
 Cria e expande automaticamente uma base de conhecimento em JSON adicionando, em cada execução, 50 novas entradas únicas sobre tecnologias (linguagens, frameworks, ferramentas, bancos de dados, metodologias). A lógica usa a API Gemini para gerar conteúdo estruturado e valida/mescla o resultado com o arquivo local `data.json`.
 
-O que ele faz (resumido)
+O que ele faz
 - Gera exatamente 50 novas entradas em formato JSON.
 - Evita repetir nomes já presentes na base.
 - Faz validação básica da resposta (garante que seja um ARRAY com 50 objetos).
 - Realiza tentativas com backoff exponencial em caso de falhas.
 - Atualiza (sobrescreve) o arquivo `data.json` com a base combinada.
+
+## Tecnologias
+- JavaScript
+- Node
+- Gemini
 
 Pré-requisitos
 - Node.js instalado (v16+ recomendado).
