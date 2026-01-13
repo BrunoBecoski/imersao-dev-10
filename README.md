@@ -7,6 +7,21 @@ Aplicação para pesquisar sobre linguagens de programação com os dados gerado
 - Pesquisa pelo nome da linguagem de programação ou palavra-chave
 - Ordena pelo Nome ou Ano de Criação
 
+### Como executar
+   1. Clone o reposotório do GitHub
+      ```js
+         git clone https://github.com/BrunoBecoski/imersao-dev-10.git
+      ```
+   3. Abra no Visual Studio Code
+   4. Instale a extensão [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)
+   1. Clique com o botão direito do mouse no arquivo [index.html](index.html) e em Abrir com Live Server
+
+### Arquivos principais
+- [index.html](index.html) — principal arquivo que estrutura a aplicação.
+- [scripts.js](scripts.js) — script que contém todas as funcionalidades.
+- [styles.css](styles.css) — estilização da aplicação.
+- [data.json](data.json) — arquivo de dados que será utilizado na pesquisa.
+
 ### Ordem Alfabética
 <img src=".github/gif-2.gif" alt="Gif 2" />
 
@@ -15,12 +30,6 @@ Aplicação para pesquisar sobre linguagens de programação com os dados gerado
 
 ### Pesquisar com a palavra-chave
 <img src=".github/gif-4.gif" alt="Gif 4" />
-
-### Arquivos principais
-- [index.html](index.html) — principal arquivo que estrutura a aplicação.
-- [scripts.js](scripts.js) — script que contém todas as funcionalidades.
-- [styles.css](styles.css) — estilização da aplicação.
-- [data.json](data.json) — arquivo de dados que será utilizado na pesquisa.
 
 # Gerador de dado da Base de Conhecimento (Gemini)
 
