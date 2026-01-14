@@ -3,9 +3,12 @@ Aplicação para pesquisar sobre linguagens de programação com os dados gerado
 
 <img src=".github/gif-1.gif" alt="Gif 1"/>
 
-## O que ele faz
-- Pesquisa pelo nome da linguagem de programação ou palavra-chave
-- Ordena pelo Nome ou Ano de Criação
+## Principais funcionalidades
+- Pesquisa pelo nome da linguagem de programação.
+- Pesquisar com a palavra-chave. 
+- Organizar os resultados da pesquisa por Nome ou Ano de Criação.
+- Organizar os resultados da pesquisa por ordem Crescente e Decrescente.
+- Url com parâmetro da pesquisa ```?search=javascript```.
 
 ### Como executar
    1. Clone o reposotório do GitHub
