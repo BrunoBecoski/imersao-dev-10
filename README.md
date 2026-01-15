@@ -3,12 +3,16 @@ Aplicação para pesquisar sobre linguagens de programação com os dados gerado
 
 <img src=".github/gif-1.gif" alt="Gif 1"/>
 
-## Principais funcionalidades
+### Principais funcionalidades
 - Pesquisa pelo nome da linguagem de programação.
 - Pesquisar com a palavra-chave. 
 - Organizar os resultados da pesquisa por Nome ou Ano de Criação.
 - Organizar os resultados da pesquisa por ordem Crescente e Decrescente.
 - Url com parâmetro da pesquisa ```?search=javascript```.
+
+### Pré-requisitos
+- Visual Studio Code.
+- Extensão Live Server.
 
 ### Como executar
    1. Clone o reposotório do GitHub
@@ -21,9 +25,9 @@ Aplicação para pesquisar sobre linguagens de programação com os dados gerado
 
 ### Arquivos principais
 - [index.html](index.html) — principal arquivo que estrutura a aplicação.
-- [scripts.js](scripts.js) — script que contém todas as funcionalidades.
+- [scripts.js](scripts.js) — arquivo que contém todas as funcionalidades.
 - [styles.css](styles.css) — estilização da aplicação.
-- [data.json](data.json) — arquivo de dados que será utilizado na pesquisa.
+- [data.json](data.json) — arquivo de dados que será utilizado na pesquisa gerados pelo (Gemini).
 
 ### Ordem Alfabética
 <img src=".github/gif-2.gif" alt="Gif 2" />
@@ -34,11 +38,16 @@ Aplicação para pesquisar sobre linguagens de programação com os dados gerado
 ### Pesquisar com a palavra-chave
 <img src=".github/gif-4.gif" alt="Gif 4" />
 
-# Gerador de dado da Base de Conhecimento (Gemini)
+</br>
+</br>
+
+# Node
+
+## Gerador de dado da Base de Conhecimento (Gemini)
 
 Cria e expande automaticamente uma base de conhecimento em JSON adicionando, em cada execução, 50 novas entradas únicas sobre tecnologias (linguagens, frameworks, ferramentas, bancos de dados, metodologias). A lógica usa a API Gemini para gerar conteúdo estruturado e valida/mescla o resultado com o arquivo local `data.json`.
 
-## O que ele faz
+### O que ele faz
 - Gera exatamente 50 novas entradas em formato JSON.
 - Evita repetir nomes já presentes na base.
 - Faz validação básica da resposta (garante que seja um ARRAY com 50 objetos).
@@ -68,10 +77,6 @@ Cria e expande automaticamente uma base de conhecimento em JSON adicionando, em 
      npm start
    ```
 
-### O que esperar
-- Ao finalizar, o arquivo `data.json` será atualizado com as entradas antigas + 50 novas geradas.
-- Logs no console informam sucesso, número de itens e possíveis erros.
-
 ### Onde ajustar comportamento
 - Para alterar a quantidade gerada, edite a constante `TOTAL_ITEMS` em [generator.js](node/generator.js) (`TOTAL_ITEMS`).
 - Função responsável pela geração: [`generateNewKnowledge`](node/generator.js).
@@ -82,7 +87,3 @@ Cria e expande automaticamente uma base de conhecimento em JSON adicionando, em 
 - [data.json](node/data.json) — arquivo de dados que será atualizado.
 - [package.json](node/package.json) — configuração do projeto e script de start.
 - Crie [.env](node/.env.example) na raiz com a variável GEMINI_API_KEY.
-
-### Avisos rápidos
-- O arquivo `data.json` será sobrescrito ao final do processo.
-- Verifique limites e custos da API Gemini antes de executar em escala.
