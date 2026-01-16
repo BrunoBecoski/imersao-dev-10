@@ -1,4 +1,9 @@
-# Imersão DEV 10 - Alura
+<h1 align="center">Imersão DEV 10 - Alura</h1>
+
+</br>
+</br>
+
+## Base de Conhecimento
 Aplicação para pesquisar sobre linguagens de programação com os dados gerados pelo (Gemini).
 
 <img src=".github/gif-1.gif" alt="Gif 1"/>
@@ -41,9 +46,9 @@ Aplicação para pesquisar sobre linguagens de programação com os dados gerado
 </br>
 </br>
 
-# Node
+## Node
 
-## Gerador de dado da Base de Conhecimento (Gemini)
+### Gerador de dado da Base de Conhecimento (Gemini)
 
 Cria e expande automaticamente uma base de conhecimento em JSON adicionando, em cada execução, 50 novas entradas únicas sobre tecnologias (linguagens, frameworks, ferramentas, bancos de dados, metodologias). A lógica usa a API Gemini para gerar conteúdo estruturado e valida/mescla o resultado com o arquivo local `data.json`.
 
