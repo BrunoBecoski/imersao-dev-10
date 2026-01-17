@@ -8,12 +8,28 @@ Aplicação para pesquisar sobre linguagens de programação com os dados gerado
 
 <img src=".github/gif-1.gif" alt="Gif 1"/>
 
-### Principais funcionalidades
-- Pesquisa pelo nome da linguagem de programação.
-- Pesquisar com a palavra-chave. 
-- Organizar os resultados da pesquisa por Nome ou Ano de Criação.
-- Organizar os resultados da pesquisa por ordem Crescente e Decrescente.
+### O que ele faz
+- Busca o nome da linguagem de programação ou palavra-chave.
+- Filtra os dados do arquivo [data.json](data.json).
+  - `"name"`
+  - `"tags"`
+- Mostra na tela a lista com os resultados.
+- Que podem ser ordenadas em:
+   - Alfabética.
+   - Criação.
+- Nos sentidos:
+   - Crescente.
+   - Decrescente.
 - Url com parâmetro da pesquisa ```?search=javascript```.
+
+### Ordem Alfabética (Crescente e Decrescente)
+<img src=".github/gif-2.gif" alt="Gif 2" />
+
+### Ordem Criação (Decrescente e Crescente)
+<img src=".github/gif-3.gif" alt="Gif 3" />
+
+### Busca com a palavra-chave
+<img src=".github/gif-4.gif" alt="Gif 4" />
 
 ### Pré-requisitos
 - Visual Studio Code.
@@ -33,15 +49,6 @@ Aplicação para pesquisar sobre linguagens de programação com os dados gerado
 - [scripts.js](scripts.js) — arquivo que contém todas as funcionalidades.
 - [styles.css](styles.css) — estilização da aplicação.
 - [data.json](data.json) — arquivo de dados que será utilizado na pesquisa gerados pelo (Gemini).
-
-### Ordem Alfabética
-<img src=".github/gif-2.gif" alt="Gif 2" />
-
-### Ordem Ano de Criação
-<img src=".github/gif-3.gif" alt="Gif 3" />
-
-### Pesquisar com a palavra-chave
-<img src=".github/gif-4.gif" alt="Gif 4" />
 
 </br>
 </br>
