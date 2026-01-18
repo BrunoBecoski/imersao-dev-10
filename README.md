@@ -9,17 +9,16 @@ Aplicação para pesquisar sobre linguagens de programação com os dados gerado
 <img src=".github/gif-1.gif" alt="Gif 1"/>
 
 ### O que ele faz
-- Busca o nome da linguagem de programação ou palavra-chave.
-- Filtra os dados do arquivo [data.json](data.json).
+- Obtêm o pesquisa feita.
+- Filtra com os dados do arquivo [data.json](data.json).
   - `"name"`
   - `"tags"`
 - Mostra na tela a lista com os resultados.
-- Que podem ser ordenadas em:
-   - Alfabética.
-   - Criação.
-- Nos sentidos:
-   - Crescente.
-   - Decrescente.
+- Ordena em:
+   - Alfabética
+   - Criação
+       - Crescente
+       - Decrescente
 - Url com parâmetro da pesquisa ```?search=javascript```.
 
 ### Ordem Alfabética (Crescente e Decrescente)
@@ -99,3 +98,16 @@ Cria e expande automaticamente uma base de conhecimento em JSON adicionando, em 
 - [data.json](node/data.json) — arquivo de dados que será atualizado.
 - [package.json](node/package.json) — configuração do projeto e script de start.
 - Crie [.env](node/.env.example) na raiz com a variável GEMINI_API_KEY.
+
+### Formato do [data.json](data.json)
+  ```json
+    [
+      {
+        "name": "",
+        "year": "",
+        "description": "",
+        "link": "",
+        "tags": [ "", "", "", "" ]
+      }
+    ]
+  ```
